@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<head>
+	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+
+	<title>SMAP sign up page</title>
+</head>
+<body>
+	<h1>SMAP Childcare Registration Page</h1>
+	<h3>Welcome to SMAP!  Let's get started</h3>
+	<h3>Please enter your information in the fields below</h3>
+	<!--gonna create template-->
+<!--
+	<script id="list-template" type="text/x-handlebars-template">
+		<li>{{message}}</li>
+	</script>
+-->
+	
+		
+		<form action="" id="parent-info">
+			<p>Parent Information</p>
+				<p>Parent 1</p>
+					First Name:<input type="text" id="mother-first">
+					Last Name:<input type="text" id="mother-last">
+					<br />
+					<br />
+					<br />
+				<p>Parent 2</p>
+					First Name:<input type="text" id="father-first">
+					Last Name:<input type="text" id="father-last">
+					<br />
+				<p>Do both parents reside in the same household?</p>
+					<div id="firstButton">
+						<input type="checkbox" name="resideYes" value="yes" id="resideYes"> yes
+						<input type="checkbox" name="resideNo" value="no" id="resideNo">no<br>
+					</div>
+<!--
+			<button type="submit" value="submit" id="submit-parent-info">Next</button>
+-->
+		</form>
+  			
+  			<form action="" id="address">
+
+  			<p id="main-address">Home Address</p>
+  				street address<input type="text" id="street-address"><br>
+  				city<input type="text" id="city">
+  				state<input type="text" id="state">
+  				zip<input type="text" id="zip">
+  			<br />
+
+  			<button type="submit" value="submit" id="submit-address-info">Next</button> 
+  
+
+  			</form>
+
+  			<form action="" id="separate-addresses">
+
+  			<p id="mom-address">Parent 1 Home Address</p>
+  				street address<input type="text" id="mom-street-address"><br>
+  				city<input type="text" id="mom-city">
+  				state<input type="text" id="mom-state">
+  				zip<input type="text" id="mom-zip">
+
+  			<p id="dad-address">Parent 2 Home Address</p>
+  				street address<input type="text" id="dad-street-address"><br>
+  				city<input type="text" id="dad-city">
+  				state<input type="text" id="dad-state">
+  				zip<input type="text" id="dad-zip">	
+  			<br />
+
+			<button type="submit" value="submit" id="submit-separate-address-info">Next</button>
+
+  			</form>
+  		
+
+  		<form action="" id="child-info">
+		  	<p>Child Information</p>
+
+  				Child First Name:<input type="text" id="parent-first">
+				Child Last Name:<input type="text" id="parent-last"><br>
+				<div id="which-house">
+					In which household does {{child}} spend most of his/her time?<input type="checkbox" name="momHouse" value="momHouse"> Mother
+	  				<input type="checkbox" name="dadHouse" value="dadHouse" >Father
+	  				Will both parents be involved in child drop off/pick up?<input type"checkbox" name="custody">
+  					
+  				</div>
+
+  			<p>Which days will your child be joining us? (please check all days which apply)</p>
+  			
+  				<div id="daysOfWeek">
+  					<input type="checkbox" name="days of the week" id="monday">Monday
+  					<input type="checkbox" name="days of the week" id="tuesday">Tuesday
+  					<input type="checkbox" name="days of the week" id="wednesday">Wednesday
+  					<input type="checkbox" name="days of the week" id="thursday">Thursday
+  					<input type="checkbox" name="days of the week" id="friday">Friday		
+  				</div>
+  			
+  			<p>...and which time slot? (please pick one)</p>
+
+  				<input type="checkbox" name="timeslots" id="short">9:00AM-12:30PM
+  				<input type="checkbox" name="timeslots" id="medium">9:00AM-3:00PM
+  				<input type="checkbox" name="timeslots" id="long">9:00AM-6:00PM
+
+			<button type="submit" value="submit" id="submit-child-info">Next</button>
+
+		</form>
+<!--
+	<ol id="messages-list"></ol>
+-->
+	
+	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+	<script>
+  		// Initialize Firebase
+  		var config = {
+    		apiKey: "AIzaSyCzimJ2ISgjtN9_jRfcbODbaRh-dia7jHY",
+    		authDomain: "smapfaminfo.firebaseapp.com",
+    		databaseURL: "https://smapfaminfo.firebaseio.com",
+    		storageBucket: "smapfaminfo.appspot.com",
+  		};
+  		firebase.initializeApp(config);
+	</script>
+	<script src="main.js" type"text/javascript"></script>	
+	<script src="rough-crud.js" type="text/javascript"></script>
+</body>
+</html>
