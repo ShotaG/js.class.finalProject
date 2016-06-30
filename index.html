@@ -23,19 +23,19 @@
 		<form action="" id="parent-info">
 			<p>Parent Information</p>
 				<p>Parent 1</p>
-					First Name:<input type="text" id="mother-first">
-					Last Name:<input type="text" id="mother-last">
+					First Name:<input type="text" id="mother-first" class "pInfo">
+					Last Name:<input type="text" id="mother-last" class "pInfo">
 					<br />
 					<br />
 					<br />
 				<p>Parent 2</p>
-					First Name:<input type="text" id="father-first">
-					Last Name:<input type="text" id="father-last">
+					First Name:<input type="text" id="father-first" class "pInfo">
+					Last Name:<input type="text" id="father-last" class "pInfo">
 					<br />
 				<p>Do both parents reside in the same household?</p>
 					<div id="firstButton">
-						<input type="checkbox" name="resideYes" value="yes" id="resideYes"> yes
-						<input type="checkbox" name="resideNo" value="no" id="resideNo">no<br>
+						<input type="checkbox" name="resideYes" value="yes" id="resideYes" class="check"> yes
+						<input type="checkbox" name="resideNo" value="no" id="resideNo" class = "check">no<br>
 					</div>
 <!--
 			<button type="submit" value="submit" id="submit-parent-info">Next</button>
@@ -123,6 +123,7 @@
   		firebase.initializeApp(config);
 	</script>
 	<script src="main.js" type"text/javascript"></script>	
-	<script src="rough-crud.js" type="text/javascript"></script>
+<!--	<script src="rough-crud.js" type="text/javascript"></script>      -->
+  <script src="crud.js" type="text/javascript"></script> 
 </body>
 </html>
