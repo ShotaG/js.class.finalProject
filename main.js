@@ -1,5 +1,10 @@
 //when user checks yes, show only one address and 
 //hide parent info
+$('#submit-parent-info').on("click", function(event) {
+	$('#same-house').show();
+	$('#parent-info').hide();
+});
+
 $('input[name=resideYes]').change(function(){
 	if($(this).is(':checked')) {
         $('#address').show();

@@ -1,9 +1,8 @@
 $(document).ready(function() {
   var myDBReference = new Firebase('https://smapfaminfo.firebaseio.com//');
   
-  $('.check').on("click", function(event) {
+  $('#submit-parent-info').on("click", function(event) {
     event.preventDefault();
-
     var parentInfo = new Object();
       parentInfo.momFirst = $('#mother-first').val();
       parentInfo.momLast = $('#mother-last').val();
@@ -25,14 +24,17 @@ $(document).ready(function() {
       dadFirst: $dadFirst,
       dadLast: $dadLast   
     });
+  });
+
+    
 
 myDBReference.child('parentInformation').on('child_added', function(results) {
     results.forEach(function(parentInformation) {
       var data = {
-        momFirst: $('#mother-first').val(),
-        momLast: $('#mother-last').val(),
-        dadFirst: $('#father-first').val(),
-        dadLast: $('#father-last').val(), 
+        momFirst: results.val().momFirst,
+        momLast: results.val().momLast,
+        dadFirst: results.val().dadFirst,
+        dadLast: results.val().dadLast, 
         id: results.key()
       }
 
@@ -42,7 +44,8 @@ myDBReference.child('parentInformation').on('child_added', function(results) {
       
       var readableData = dataKey + " , " + userEntryValue + ": "+ userEntryKey;
      console.log(readableData);
-     console.log(userEntryValue);
+     //console.log(userEntryValue);
+      //console.log(data);
       });
 
       //console.log(parentInformation.A.B);
@@ -52,9 +55,10 @@ myDBReference.child('parentInformation').on('child_added', function(results) {
       //console.log(parentInformation.Y.path.u.1);
     });
     
+   
     });
 
-  });
+  
 
   
 
@@ -79,3 +83,5 @@ myDBReference.child('parentInformation').on('child_added', function(results) {
   }
 
 */
+
+ 
