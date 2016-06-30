@@ -32,8 +32,9 @@
           First Name:<input type="text" id="father-first" class "pInfo">
           Last Name:<input type="text" id="father-last" class "pInfo">
           <br />
-        <p>Do both parents reside in the same household?</p>
-          <div id="firstButton">
+        
+        <div id="firstButton">
+          <p>Do both parents reside in the same household?</p>
             <input type="checkbox" name="resideYes" value="yes" id="resideYes" class="check"> yes
             <input type="checkbox" name="resideNo" value="no" id="resideNo" class = "check">no<br>
           </div>
@@ -41,6 +42,23 @@
       <button type="submit" value="submit" id="submit-parent-info">Next</button>
 -->
     </form>
+
+    <div id="correctInfo">
+      <p id="confirmation">Is the information you entered correct?</p>
+      <script id="entry-confirm"type="text/x-handlebars-template">
+        <p>{{momFirstName}}</p>
+        <p>{{momLastName}}</p>
+        <p>{{dadFirstName}}</p>
+        <p>{{dadLastName}}</p>
+      </script>
+
+      <div id="firstConfirm">
+            <input type="checkbox" name="confirmYes" value="yes" id="confirmYes" class="confirm"> yes
+            <input type="checkbox" name="confirmNo" value="no" id="confirmNo" class = "confirm">no<br>
+      </div>
+    </div>
+
+
         
         <form action="" id="address">
 

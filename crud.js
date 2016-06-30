@@ -28,10 +28,12 @@ $(document).ready(function() {
 
     var postId = newPostRef.key();
 
-    console.log(postId);
+    //console.log(postId);
     
 });
 
+
+  
   myDBReference.child('parentInformation').on('child_added', function(results) {
       var data = {
         momFirst: $('#mother-first').val(),
@@ -42,8 +44,22 @@ $(document).ready(function() {
         results: results.val()
       }
      // console.log(data.results);
-      console.log(data.dadLast);  // this works, now manipulate in dom
-    
+      //console.log(data.dadLast);  // this works, now manipulate in dom
+      var source = $('#entry-confirm').html();
+      //console.log(source);
+      var template = Handlebars.compile(source);
+     // console.log(template);
+      var confirmData = {
+        momFirstName: "mom's first name: " + data.momFirst,
+        momLastName: "mom's last name: " + data.momLast,
+        dadFirstName: "dad's first name: " + data.dadFirst,
+        dadLastName: "dad's last name: " + data.dadLast, 
+      }
+
+      var fullTemplate = template(confirmData);
+
+      $('body').append(fullTemplate);
+
   });
 
 });
